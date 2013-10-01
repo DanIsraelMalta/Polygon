@@ -1,6 +1,6 @@
-Polygon - javascript class for 2D polygons
+#Polygon - javascript class for 2D polygons
 
-Methods:
+##Methods:
     * constructor:
         - Polygon        - create a polygon instance
     * polygon structural manipulation:
@@ -63,21 +63,22 @@ Methods:
         - convexHull     - return a polygon which is the convex hull of current polygon
         - radialFit      - approximate polygon as a circle or an ellipse
 
-Properties:
+#Properties:
     * accuracy           - used to determine floating point equality tolerance
                            default: 1e-10
 
-Notes:
- - Polygon is always closed. Last vertex is connected to first vertex.
- - Boolean operation (union, intersect) are allowed only if the "clipping" polygon is convex.
- - methods convexHull and Simplify utilize recrusive functions.
- - Polygon class use 'privileged' methods (a term used to describe closures within the constructor).
- - The following polygon operations can be chained: remove, splice, push, unshift, change, swap,
+#Notes:
+ * Polygon is always closed. Last vertex is connected to first vertex.
+ * Boolean operation (union, intersect) are allowed only if the "clipping" polygon is convex.
+ * methods convexHull and Simplify utilize recrusive functions.
+ * Polygon class use 'privileged' methods (a term used to describe closures within the constructor).
+ * The following polygon operations can be chained: remove, splice, push, unshift, change, swap,
    append, insertPolygon, insertVertex, reverse, sortCW, sliceBox, sliceCircle, rotate, moveAlong,
    moveBy, simplify.
 
-Examples:
-1)  // create a star shaped polygon composed of 100 points
+#Examples:
+```javascript
+    // create a star shaped polygon composed of 100 points
     var _star = new Polygon({type: 'star', inner: 100, outer: 300, points: 100});
 
     // remove all its 'inner circle' vertex and move it 50px to the right
@@ -90,8 +91,10 @@ Examples:
     console.log('fitted circle radius error is ' + (_circleFit[2] - 300) + '.\n' +
                 'fitted circle origin error in x is ' + (_circleFit[0] - 50) + '.\n' +
                 'fitted circle origin error in y is ' + (_circleFit[1]) + '.\n');
+```
 
-2)  // create a hexagon
+```javascript
+    // create a hexagon
     var _hex = new Polygon({type: 'regular', radius: 100, points: 6});
 
     // rotate hexagon by 70 degrees and move it 95px in a 45 degrees bearing
@@ -119,10 +122,13 @@ Examples:
                 'intersection polygon centeroidal Iyy is ' + _data[7] + '\n' +
                 'intersection polygon centeroidal Ixy is ' + _data[8]);
 
-3)  // create two polygons
+```
+
+```javascript
+    // create two polygons
     var subject = new Polygon({type: 'point', points: [[50, 150], [200, 50], [350, 150], [350, 300], [250, 300], [200, 250], [150, 350], [100, 250], [100, 200]]}),
-    cliper = new Polygon({type: 'point', points: [[100, 100], [300, 100], [300, 300], [100, 300]]});
+        cliper = new Polygon({type: 'point', points: [[100, 100], [300, 100], [300, 300], [100, 300]]});
 
     // calculate their union
     union = subject.union(cliper);
-
+```
