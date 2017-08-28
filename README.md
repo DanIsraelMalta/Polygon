@@ -1,71 +1,70 @@
 #Polygon - javascript class for 2D polygons
 
-##Methods:
-    * constructor:
-        - Polygon        - create a polygon instance
-    * polygon structural manipulation:
-        - remove         - remove vertices given at certain indexes
-        - splice         - remoce vertices found within two given indexes
-        - slice          - return a new polygon built with vertices found within two given indexes
-        - push           - push a new vertices at the end of the polygon
-        - unshift        - push a new vertices at the begining of the polygon
-        - shift          - retrive and remove first vertex
-        - pop            - retrive and remove last vertex
-        - change         - change a given vertex
-        - swap           - swap between polygon X and Y properties
-        - append         - append a given polygon at the end of current polygon
-        - insertPolygon  - insert a polygon in a given index
-        - insertVertex   - insert a vertex in a given index
-        - reverse        - reverse polygon vertices
-        - sortCW         - sort polygon vertices clockwise
-    * polygon information extraction
-        - getX           - return an array of vertices X part
-        - getY           - return an array of vertices Y part
-        - vertices       - return two arrays of vertices location (X, Y)
-        - size           - return number of vertices in polygon
-        - data           - return polygon area, perimeter, centeroid, moments of inertia
-                           and centroidal moments of inertia
-        - isClockWise    - return true if polygon vertices are sorted clock wise
-        - maxSide        - return index of first vertices (and the following vertices)
-                           whos side is largest, and that side value
-        - minSide        - return index of first vertices (and the following vertices)
-                           whos side is smallest, and that side value
-        - maxAngle       - return index of first vertices whos angle is smallest (sharpest edge)
-                           and that angle value
-        - minAngle       - return index of first vertices whos angle is largest (widest edge)
-                           and thath angle value
-        - extent         - return the bounding box of polygon [Xmin, Xmax, Ymin, Ymax]
-                           (not necessarily the minimal bounding box)
-        - bottomVertex   - return index of lowest vertex
-        - upperVertex    - return index of highest vertex
-        - leftVertex     - return index of "left-most" vertex
-        - rightVertex    - return index of "right-most" vertex
-    * polygon geometric manipulation:
-        - rotate         - rotate polygon certain degrees around a given point
-        - moveAlong      - move polygon certain distance along a given directions
-        - moveBy         - move polygon certain distance along the X and Y axis
-        - simplify       - remove "reduceable" (= "less important") vertices
-        - sliceBox       - remove all polygon vertices located within a given box [bottom left, upper right]
-        - sliceCircle    - remove all polygon vertices located within a given circle [x, y, radius]
-    * polygon-point operation / information:
-        - inside         - test if a given point is located within the polygon
-        - on             - test if a given point is located on the polygon
-        - closest        - return the polygon vertices closest to a given point
-    * polygon-line operation / information:
-        - lineIntersect  - return a flag indicating if a line intersects the polygon
-                           and a set of (x,y) intersection points
-    * polygon-polygon operation / information:
-        - intersect      - perform intersection between two polygons (clipping polygon must be convex)
-        - union          - perform union between two polygons (clipping polygon must be convex)
-        - isEqual        - return true if two polygons are equal
-    * other methods:
-        - toString       - return polygon as a human readable string
-        - convexHull     - return a polygon which is the convex hull of current polygon
-        - radialFit      - approximate polygon as a circle or an ellipse
+#Methods:
+ * constructor:
+   - Polygon        - create a polygon instance
+ * polygon structural manipulation:
+   - remove         - remove vertices given at certain indexes
+   - splice         - remoce vertices found within two given indexes
+   - slice          - return a new polygon built with vertices found within two given indexes
+   - push           - push a new vertices at the end of the polygon
+   - unshift        - push a new vertices at the begining of the polygon
+   - shift          - retrive and remove first vertex
+   - pop            - retrive and remove last vertex
+   - change         - change a given vertex
+   - swap           - swap between polygon X and Y properties
+   - append         - append a given polygon at the end of current polygon
+   - insertPolygon  - insert a polygon in a given index
+   - insertVertex   - insert a vertex in a given index
+   - reverse        - reverse polygon vertices
+   - sortCW         - sort polygon vertices clockwise
+ * polygon information extraction
+   - getX           - return an array of vertices X part
+   - getY           - return an array of vertices Y part
+   - vertices       - return two arrays of vertices location (X, Y)
+   - size           - return number of vertices in polygon
+   - data           - return polygon area, perimeter, centeroid, moments of inertia
+                      and centroidal moments of inertia
+   - isClockWise    - return true if polygon vertices are sorted clock wise
+   - maxSide        - return index of first vertices (and the following vertices)
+                      whos side is largest, and that side value
+   - minSide        - return index of first vertices (and the following vertices)
+                      whos side is smallest, and that side value
+   - maxAngle       - return index of first vertices whos angle is smallest (sharpest edge)
+                      and that angle value
+   - minAngle       - return index of first vertices whos angle is largest (widest edge)
+                      and thath angle value
+   - extent         - return the bounding box of polygon [Xmin, Xmax, Ymin, Ymax]
+                      (not necessarily the minimal bounding box)
+   - bottomVertex   - return index of lowest vertex
+   - upperVertex    - return index of highest vertex
+   - leftVertex     - return index of "left-most" vertex
+   - rightVertex    - return index of "right-most" vertex
+ * polygon geometric manipulation:
+   - rotate         - rotate polygon certain degrees around a given point
+   - moveAlong      - move polygon certain distance along a given directions
+   - moveBy         - move polygon certain distance along the X and Y axis
+   - simplify       - remove "reduceable" (= "less important") vertices
+   - sliceBox       - remove all polygon vertices located within a given box [bottom left, upper right]
+   - sliceCircle    - remove all polygon vertices located within a given circle [x, y, radius]
+ * polygon-point operation / information:
+   - inside         - test if a given point is located within the polygon
+   - on             - test if a given point is located on the polygon
+   - closest        - return the polygon vertices closest to a given point
+ * polygon-line operation / information:
+   - lineIntersect  - return a flag indicating if a line intersects the polygon
+                      and a set of (x,y) intersection points
+ * polygon-polygon operation / information:
+   - intersect      - perform intersection between two polygons (clipping polygon must be convex)
+   - union          - perform union between two polygons (clipping polygon must be convex)
+   - isEqual        - return true if two polygons are equal
+ * other methods:
+   - toString       - return polygon as a human readable string
+   - convexHull     - return a polygon which is the convex hull of current polygon
+   - radialFit      - approximate polygon as a circle or an ellipse
 
 #Properties:
-    * accuracy           - used to determine floating point equality tolerance
-                           default: 1e-10
+ * accuracy - used to determine floating point equality tolerance default: 1e-10
 
 #Notes:
  * Polygon is always closed. Last vertex is connected to first vertex.
