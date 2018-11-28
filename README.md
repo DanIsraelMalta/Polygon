@@ -1,6 +1,6 @@
-#Polygon - javascript class for 2D polygons
+# Polygon - javascript class for 2D polygons
 
-#Methods:
+# Methods:
  * constructor:
    - Polygon        - create a polygon instance
  * polygon structural manipulation:
@@ -63,10 +63,10 @@
    - convexHull     - return a polygon which is the convex hull of current polygon
    - radialFit      - approximate polygon as a circle or an ellipse
 
-#Properties:
+# Properties:
  * accuracy - used to determine floating point equality tolerance default: 1e-10
 
-#Notes:
+# Notes:
  * Polygon is always closed. Last vertex is connected to first vertex.
  * Boolean operation (union, intersect) are allowed only if the "clipping" polygon is convex.
  * methods convexHull and Simplify utilize recrusive functions.
@@ -75,7 +75,7 @@
    append, insertPolygon, insertVertex, reverse, sortCW, sliceBox, sliceCircle, rotate, moveAlong,
    moveBy, simplify.
 
-#Examples:
+# Examples:
 ```javascript
     // create a star shaped polygon composed of 100 points
     var _star = new Polygon({type: 'star', inner: 100, outer: 300, points: 100});
